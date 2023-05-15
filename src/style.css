@@ -1,0 +1,71 @@
+:root {
+  --bg-dark: #252323;
+  --bg-light: #fafaff;
+  --text-light: var(--bg-light);
+  --text-dark: var(--bg-dark);
+  --clr-blue: #0466c8;
+  --clr-green: #0a9456;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* line-height: calc(1em + 0.5rem); */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  user-select: none;
+}
+
+button {
+  display: inline-block;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  font-family: "General Sans", sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--clr-blue);
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  scroll-snap-type: y mandatory;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.page {
+  height: 100%;
+  width: 100%;
+  scroll-snap-align: start;
+}
+
+.page:nth-child(1) {
+  background-color: var(--bg-dark);
+}
+
+.page:nth-child(2) {
+  background-color: var(--clr-blue);
+}
+
+.page:nth-child(3) {
+  background-color: var(--bg-light);
+}
