@@ -1,3 +1,5 @@
+@import "./utils.css";
+
 :root {
   --bg-dark: #252323;
   --bg-light: #fafaff;
@@ -5,35 +7,6 @@
   --text-dark: var(--bg-dark);
   --clr-blue: #0466c8;
   --clr-green: #0a9456;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  /* line-height: calc(1em + 0.5rem); */
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
-  user-select: none;
-}
-
-button {
-  display: inline-block;
-  padding: 0;
-  border: none;
-  background: none;
-  cursor: pointer;
 }
 
 body {
@@ -68,4 +41,21 @@ body {
 
 .page:nth-child(3) {
   background-color: var(--bg-light);
+}
+
+#trailer {
+  height: 20px;
+  width: 20px;
+  background-color: var(--clr-green);
+  border-radius: 20px;
+
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: 10000;
+
+  pointer-events: none;
+
+  display: grid;
+  place-items: center;
 }
