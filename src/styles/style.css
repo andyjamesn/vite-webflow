@@ -11,31 +11,30 @@
 
 body {
   height: 100vh;
-  width: 100vw;
   font-family: "General Sans", sans-serif;
-  background-color: var(--bg-dark);
   color: var(--clr-blue);
   z-index: 2;
   position: relative;
   overflow: hidden;
 }
 
-.container {
+main {
   width: 100%;
   height: 100%;
-  transition: transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  scroll-behavior: smooth;
   display: flex;
+  background-color: var(--bg-dark);
+  transition: transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
   overflow-y: hidden;
-  overflow-x: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
 }
 
 /* Page */
 .page {
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   flex: none;
   display: flex;
   justify-content: center;
@@ -74,6 +73,7 @@ body {
   font-weight: 700;
 }
 
+/* NAV */
 #nav-toggle {
   width: 5rem;
   aspect-ratio: 1;
@@ -99,7 +99,7 @@ body {
   transform: translateX(-50%) scale(0.95);
 }
 
-body:not([data-nav="true"]) > nav > #nav-toggle:hover > .open {
+body:not([data-nav="true"]) > nav > #nav-toggle > .open {
   opacity: 1;
   transform: translate(-50%, -50%) scale(1);
 }
@@ -109,7 +109,7 @@ body[data-nav="true"] > nav > #nav-toggle > .close {
   transform: translate(-50%, -50%) scale(1);
 }
 
-body[data-nav="true"] > .container {
+body[data-nav="true"] > main {
   transform: translateY(-50%);
 }
 
@@ -124,4 +124,15 @@ body[data-nav="true"] > .container {
   transition: transform, opacity;
   transition-timing-function: ease;
   transition-duration: 400ms;
+}
+
+/* Scroll Progress */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  width: 0%;
+  height: 4px;
+  background: var(--clr-blue);
+  z-index: 10000;
+  transition: width 200ms ease;
 }

@@ -1,23 +1,34 @@
 import "./scripts/trailer";
 import "./styles/style.css";
 
-const navButton = document.getElementById("nav-toggle");
-const scrollContainer = document.querySelector(".container");
+window.addEventListener("DOMContentLoaded", () => {
+  const navButton = document.getElementById("nav-toggle");
+  const scrollContainer = document.querySelector("main");
+  const scrollProgress = document.getElementById("scroll-progress");
+  const docWidth =
+    document.documentElement.scrollWidth + document.documentElement.clientWidth;
 
-const toggleNav = () => {
-  document.body.dataset.nav =
-    document.body.dataset.nav === "true" ? "false" : "true";
-};
+  const toggleNav = () => {
+    document.body.dataset.nav =
+      document.body.dataset.nav === "true" ? "false" : "true";
+  };
+  navButton!.onclick = toggleNav;
 
-navButton!.onclick = toggleNav;
+  scrollContainer!.addEventListener("wheel", (e: any) => {
+    e.preventDefault();
+    //Scroll Page
+    let scrollBy = 0;
+    if (e.deltaY > 0) {
+      scrollBy = e.deltaY + 400;
+    } else {
+      scrollBy = e.deltaY - 400;
+    }
+    scrollContainer!.scrollLeft += scrollBy;
+  });
 
-scrollContainer!.addEventListener("wheel", (e: any) => {
-  e.preventDefault();
-  let scrollBy = 0;
-  if (e.deltaY > 0) {
-    scrollBy = e.deltaY + 400;
-  } else {
-    scrollBy = e.deltaY - 400;
-  }
-  scrollContainer!.scrollLeft += scrollBy;
+  //Scroll Percentage
+  scrollContainer!.addEventListener("scroll", () => {
+    const scrollLeft = scrollContainer!.scrollLeft;
+    scrollProgress!.style.width = `${(scrollLeft / docWidth) * 100}%`;
+  });
 });
