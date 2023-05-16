@@ -1,4 +1,4 @@
-import { setUpTrailer } from "./scripts/trailer";
+// import { setUpTrailer } from "./scripts/trailer";
 import { setUpScroll } from "./scripts/scroll";
 import "./styles/style.css";
 
@@ -12,5 +12,5 @@ window.addEventListener("DOMContentLoaded", () => {
   navButton!.onclick = toggleNav;
 
   setUpScroll();
-  setUpTrailer();
+  // setUpTrailer();
 });
