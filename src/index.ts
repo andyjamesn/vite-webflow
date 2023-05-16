@@ -2,7 +2,7 @@ import "./scripts/trailer";
 import "./styles/style.css";
 
 const navButton = document.getElementById("nav-toggle");
-// const scrollContainer = document.querySelector(".container");
+const scrollContainer = document.querySelector(".container");
 
 const toggleNav = () => {
   document.body.dataset.nav =
@@ -11,13 +11,13 @@ const toggleNav = () => {
 
 navButton!.onclick = toggleNav;
 
-// scrollContainer!.addEventListener("wheel", (e: any) => {
-//   e.preventDefault();
-//   let scrollBy = 0;
-//   if (e.deltaY > 0) {
-//     scrollBy = e.deltaY + 300;
-//   } else {
-//     scrollBy = e.deltaY - 300;
-//   }
-//   scrollContainer!.scrollLeft += scrollBy;
-// });
+scrollContainer!.addEventListener("wheel", (e: any) => {
+  e.preventDefault();
+  let scrollBy = 0;
+  if (e.deltaY > 0) {
+    scrollBy = e.deltaY + 400;
+  } else {
+    scrollBy = e.deltaY - 400;
+  }
+  scrollContainer!.scrollLeft += scrollBy;
+});
