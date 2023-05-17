@@ -148,6 +148,7 @@ body[data-nav="true"] > nav > #nav-links {
   transform: translateX(-50%);
   background-color: var(--clr-blue);
   border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 
   transition: transform, background-color;
   transition-timing-function: eases;
