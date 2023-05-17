@@ -102,11 +102,27 @@ nav {
 
 .nav-link-label {
   color: var(--bg-dark);
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: 700;
   margin: 0rem;
   text-transform: uppercase;
   cursor: pointer;
+  position: relative;
+}
+
+.nav-link-label::before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 4px;
+  background-color: var(--clr-blue);
+  bottom: 0;
+  left: 0;
+  transition: width 400ms cubic-bezier(0.175, 0.65, 0.32, 0.85);
+}
+
+.nav-link-label:hover:before {
+  width: 100%;
 }
 
 body[data-nav="true"] > nav > #nav-links {
@@ -164,6 +180,10 @@ body[data-nav="true"] > main {
   transition: transform, opacity;
   transition-timing-function: ease;
   transition-duration: 400ms;
+}
+
+.down {
+  transform: rotate(180deg);
 }
 
 /* Scroll Progress */
