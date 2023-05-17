@@ -108,6 +108,13 @@ nav {
   text-transform: uppercase;
   cursor: pointer;
   position: relative;
+  text-decoration: none;
+  opacity: 0.95;
+  transition: opacity 200ms ease;
+}
+
+.nav-link-label:hover {
+  opacity: 1;
 }
 
 .nav-link-label::before {
