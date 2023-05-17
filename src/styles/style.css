@@ -85,38 +85,32 @@ nav {
 }
 
 #nav-links {
+  height: 100%;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
   align-items: center;
   gap: clamp(1rem, 2vw, 2rem);
-  margin-top: clamp(2rem, 2vw, 3rem);
   padding: 0rem clamp(1rem, 2vw, 2rem);
   transform: translateY(70%) scale(0.9);
   transition: transform 400ms cubic-bezier(0.175, 0.65, 0.32, 0.85);
 }
 
 .nav-link {
-  height: 100%;
   list-style: none;
 }
 
-.nav-link a {
-  cursor: hover;
-  color: var(--clr-blue);
-  font-size: 2rem;
-  font-weight: 700;
-}
-
-sbody[data-nav="true"] > nav > #nav-links {
-  transform: translateY(0%) scale(1);
-}
-
 .nav-link-label {
-  color: var(--clr-blue);
+  color: var(--bg-dark);
   font-size: 1.25rem;
+  font-weight: 700;
   margin: 0rem;
   text-transform: uppercase;
+  cursor: pointer;
+}
+
+body[data-nav="true"] > nav > #nav-links {
+  transform: translateY(0%) scale(1);
 }
 
 /* Nav Toggle */
