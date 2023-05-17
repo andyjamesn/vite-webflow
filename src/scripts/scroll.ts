@@ -3,14 +3,14 @@ const scrollProgress = document.getElementById("scroll-progress");
 const numPages = document.querySelectorAll(".page").length;
 
 export const setUpScroll = () => {
+  //Scroll Horizontal
   scrollContainer!.addEventListener("wheel", (e: any) => {
     e.preventDefault();
-    //Scroll Page
     let scrollBy = 0;
     if (e.deltaY > 0) {
-      scrollBy = e.deltaY + 1000;
+      scrollBy = e.deltaY + window.innerWidth;
     } else {
-      scrollBy = e.deltaY - 1000;
+      scrollBy = e.deltaY - window.innerWidth;
     }
 
     scrollContainer!.scrollLeft += scrollBy;
