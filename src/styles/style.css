@@ -179,6 +179,28 @@ body[data-nav="true"] > main {
   transform: translateY(-20%);
 }
 
+/* Media Query for Nav Toggle */
+@media (width < 900px) {
+  body[data-nav="true"] > main {
+    transform: translateY(-100%);
+  }
+
+  nav {
+    height: 100%;
+  }
+
+  #nav-links {
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  .nav-link {
+    flex-grow: 0;
+  }
+}
+
 #nav-toggle > i {
   position: absolute;
   left: 50%;
