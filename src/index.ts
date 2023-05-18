@@ -1,5 +1,6 @@
 // import { setUpTrailer } from "./scripts/trailer";
 import { setUpScroll } from "./scripts/scroll";
+import { setUpDarkMode } from "./scripts/darkMode";
 import "./styles/style.css";
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -12,5 +13,6 @@ window.addEventListener("DOMContentLoaded", () => {
   navButton!.onclick = toggleNav;
 
   setUpScroll();
+  setUpDarkMode();
   // setUpTrailer();
 });

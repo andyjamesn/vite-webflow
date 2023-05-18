@@ -9,6 +9,13 @@
   --clr-green: #0a9456;
 }
 
+.dark-mode {
+  --bg-dark: #fafaff;
+  --bg-light: #252323;
+  --text-light: #252323;
+  --text-dark: #fafaff;
+}
+
 body {
   height: 100vh;
   font-family: "General Sans", sans-serif;
@@ -39,38 +46,44 @@ main {
   height: 100vh;
   width: 100vw;
   flex: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   overflow: hidden;
 
-  /* DOES NOT WORK FOR THE LOVE OF GOD */
-  /* 3 HOURS LATER WE GOT IT, ITS BECAUSE THE SCROLL FUNCTION WAS NOT SCROLLING HIGH ENOUGH TO SNAP TO NEXT SECTION, HAD TO CHANGE FROM 400 TO 1000 */
   scroll-snap-align: start;
 }
 
-#trailer {
-  height: 20px;
-  width: 20px;
-  background-color: var(--clr-blue);
-  border-radius: 20px;
+#home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  position: fixed;
-  left: 0px;
-  top: 0px;
-  z-index: 10000;
-
-  pointer-events: none;
-
-  display: grid;
-  place-items: center;
+.home-container {
+  width: 90%;
+  height: 80%;
+  border: 2px solid var(--clr-blue);
+  border-radius: 1rem;
+  padding: 1rem;
 }
 
 /* Home */
-
 .home-title {
   font-size: 3rem;
   font-weight: 700;
+  color: var(--bg-light);
+}
+
+/* Dark Mode Toggle */
+#dark-mode-toggle {
+  top: 1rem;
+  right: 1rem;
+  color: var(--bg-light);
+  position: fixed;
+  transition: transform 200ms ease;
+  transform: scale(0.9);
+}
+
+#dark-mode-toggle:hover {
+  transform: scale(1.1);
 }
 
 /* NAV */
@@ -82,6 +95,7 @@ nav {
   bottom: 0px;
   z-index: 1;
   overflow: hidden;
+  background: var(--bg-light);
 }
 
 #nav-links {
@@ -227,4 +241,22 @@ body[data-nav="true"] > main {
   background: var(--clr-blue);
   z-index: 10000;
   transition: width 200ms ease;
+}
+
+/* Mouse Trailer */
+#trailer {
+  height: 20px;
+  width: 20px;
+  background-color: var(--clr-blue);
+  border-radius: 20px;
+
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: 10000;
+
+  pointer-events: none;
+
+  display: grid;
+  place-items: center;
 }
