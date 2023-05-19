@@ -12,6 +12,17 @@ window.addEventListener("DOMContentLoaded", () => {
   };
   navButton!.onclick = toggleNav;
 
+  const projectCards = document.querySelectorAll(".project-card");
+
+  projectCards.forEach((card) => {
+    card.addEventListener("click", () => {
+      const currentActiveCard = document.querySelector(".open-card");
+      currentActiveCard!.classList.remove("open-card");
+
+      card.classList.toggle("open-card");
+    });
+  });
+
   setUpScroll();
   setUpDarkMode();
   // setUpTrailer();
