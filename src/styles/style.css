@@ -1,4 +1,5 @@
 @import "./utils.css";
+@import "./keyframes.css";
 
 :root {
   --bg-dark: #252323;
@@ -6,6 +7,8 @@
   --text-light: var(--bg-light);
   --text-dark: var(--bg-dark);
   --clr-blue: #0466c8;
+  --clr-blue-500-dark: #023364;
+  --clr-blue-500-light: #82b3e4;
   --clr-green: #0a9456;
 }
 
@@ -45,31 +48,51 @@ main {
 .page {
   height: 100vh;
   width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex: none;
   overflow: hidden;
 
   scroll-snap-align: start;
 }
 
+/* Page Container */
+.container {
+  width: 90%;
+  height: 80%;
+  border: 2px solid var(--clr-blue);
+  border-radius: 1rem;
+  /* padding: 1rem; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Home */
 #home {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.home-container {
-  width: 90%;
-  height: 80%;
-  border: 2px solid var(--clr-blue);
-  border-radius: 1rem;
-  padding: 1rem;
+.home-title {
+  font-size: clamp(3rem, 10vw, 5rem);
+  font-weight: 700;
 }
 
-/* Home */
-.home-title {
-  font-size: 3rem;
-  font-weight: 700;
-  color: var(--bg-light);
+.wavy {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--clr-blue);
+  position: relative;
+}
+
+.wavy:before {
+  content: "Allef Soares";
+  color: var(--clr-blue);
+  position: absolute;
+  animation: wavy 4s ease-in-out infinite;
 }
 
 /* Dark Mode Toggle */
