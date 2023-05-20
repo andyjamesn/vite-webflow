@@ -60,7 +60,7 @@ main {
 /* Page Container */
 .container {
   width: 90%;
-  height: 80%;
+  height: 90%;
   border: 2px solid var(--clr-blue);
   border-radius: 1rem;
   /* padding: 1rem; */
@@ -85,6 +85,11 @@ main {
   font-weight: 700;
 }
 
+.home-description {
+  font-size: 3rem;
+  color: var(--clr-blue);
+}
+
 .wavy {
   color: transparent;
   -webkit-text-stroke: 2px var(--clr-blue);
@@ -92,7 +97,7 @@ main {
 }
 
 .wavy:before {
-  content: "Allef Soares";
+  content: "Hi, I'm Allef Soares";
   color: var(--clr-blue);
   position: absolute;
   animation: wavy 4s ease-in-out infinite;
