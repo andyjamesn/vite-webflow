@@ -90,24 +90,6 @@ main {
   position: relative;
 }
 
-.home-title:hover:before {
-  animation-play-state: paused;
-}
-
-.home-title:before {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  color: var(--clr-blue);
-  -webkit-text-stroke: 0;
-  overflow: hidden;
-  border-right: 2px solid var(--clr-blue);
-  animation: home-title-animation 5s linear infinite;
-}
-
 .home-description {
   font-size: 1.25 rem;
   color: var(--clr-blue);
