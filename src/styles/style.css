@@ -94,7 +94,7 @@ main {
   -webkit-text-stroke: 2px var(--clr-blue);
   background-clip: text;
   position: relative;
-  transition: all 400ms ease;
+  transition: background-color 2s ease;
   transition-delay: 100ms;
 }
 
@@ -119,6 +119,7 @@ main {
 /* Projects */
 .projects {
   display: flex;
+  height: 70%;
   overflow: hidden;
   gap: 0.5rem;
 }
@@ -128,6 +129,7 @@ main {
   overflow: hidden;
   flex: 0.5;
   transition: all 500ms ease;
+  border-radius: 1rem;
 }
 
 .project-card:hover img {
@@ -173,9 +175,9 @@ main {
   height: 100%;
   width: 100%;
   position: absolute;
-  top: 0;
-  left: 0;
-  transition: all 500ms ease;
+  top: 0%;
+  left: 0%;
+  transition: width 500ms ease;
 }
 
 .card-content {
@@ -183,9 +185,10 @@ main {
   width: 50%;
   height: 100%;
   background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
 }
 
@@ -196,7 +199,7 @@ main {
 }
 
 .project-description {
-  font-size: 1.25rem;
+  font-size: 1rem;
   margin-top: 1rem;
 }
 
