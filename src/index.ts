@@ -1,4 +1,4 @@
-// import { setUpTrailer } from "./scripts/trailer";
+import { setUpTrailer } from "./scripts/trailer";
 import { setUpScroll } from "./scripts/scroll";
 import { setUpDarkMode } from "./scripts/darkMode";
 import "./styles/style.css";
@@ -23,7 +23,27 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  setUpHomeTitleAnimation();
   setUpScroll();
   setUpDarkMode();
-  // setUpTrailer();
+  setUpTrailer();
 });
+
+const setUpHomeTitleAnimation = () => {
+  const homeTitles = [
+    ...(document.getElementsByClassName(
+      "home-title"
+    ) as HTMLCollectionOf<HTMLElement>),
+  ];
+  const windowWidth = window.innerWidth;
+
+  window.addEventListener("mousemove", (e) => {
+    if (e.clientX < windowWidth / 2) {
+      homeTitles[0].style.backgroundColor = "#0466c8";
+      homeTitles[1].style.backgroundColor = "";
+    } else {
+      homeTitles[1].style.backgroundColor = "#0466c8";
+      homeTitles[0].style.backgroundColor = "";
+    }
+  });
+};
