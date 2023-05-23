@@ -28,3 +28,15 @@
     );
   }
 }
+
+@keyframes home-title-animation {
+  0%,
+  10%,
+  100% {
+    width: 0;
+  }
+  70%,
+  90% {
+    width: 100%;
+  }
+}

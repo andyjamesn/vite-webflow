@@ -81,12 +81,35 @@ main {
 }
 
 .home-title {
-  font-size: clamp(2rem, 10vw, 3rem);
+  font-size: clamp(2rem, 10vw, 5rem);
   font-weight: 700;
+  color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  -webkit-text-stroke: 2px var(--clr-blue);
+  position: relative;
+}
+
+.home-title:hover:before {
+  animation-play-state: paused;
+}
+
+.home-title:before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  color: var(--clr-blue);
+  -webkit-text-stroke: 0;
+  overflow: hidden;
+  border-right: 2px solid var(--clr-blue);
+  animation: home-title-animation 5s linear infinite;
 }
 
 .home-description {
-  font-size: 1.25rem;
+  font-size: 1.25 rem;
   color: var(--clr-blue);
 }
 
