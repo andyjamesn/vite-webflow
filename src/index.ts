@@ -17,7 +17,7 @@ window.addEventListener("DOMContentLoaded", () => {
   projectCards.forEach((card) => {
     card.addEventListener("click", () => {
       const currentActiveCard = document.querySelector(".open-card");
-      currentActiveCard!.classList.remove("open-card");
+      currentActiveCard!.classList.toggle("open-card");
 
       card.classList.toggle("open-card");
     });
