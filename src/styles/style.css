@@ -7,8 +7,8 @@
   --text-light: var(--bg-light);
   --text-dark: var(--bg-dark);
   --clr-blue: #0466c8;
-  --clr-blue-500-dark: #023364;
-  --clr-blue-500-light: #82b3e4;
+  --clr-blue-500-dark: #2e73b9;
+  --clr-blue-500-light: #30577e;
   --clr-green: #0a9456;
   --always-light: #fafaff;
 }
@@ -122,6 +122,7 @@ main {
   display: flex;
   gap: 0.5rem;
   position: relative;
+  /* background: var(--bg-dark); */
 }
 
 .project-card {
@@ -131,10 +132,33 @@ main {
   border: 2px solid var(--clr-blue);
   overflow: hidden;
   transition: flex 500ms cubic-bezier(0.175, 0.65, 0.32, 0.85);
+  transform: skew(-5deg);
+  background-color: rgba(37, 37, 35, 0.75);
+}
+
+.projects:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  background: linear-gradient(
+    0deg,
+    var(--clr-blue-500-dark),
+    var(--clr-blue),
+    var(--clr-blue-500-light)
+  );
+  z-index: -2;
+  filter: blur(5rem);
+  opacity: 0.5;
+  transform: skew(-5deg);
 }
 
 .open-card {
   flex: 5;
+  /* background-color: var(--clr-blue-500-dark); */
 }
 
 .open-card .card-content {
@@ -151,10 +175,9 @@ main {
   height: 100%;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
-  /* align-items: center; */
-  /* overflow: hidden; */
   transition: opacity 500ms ease;
+  margin-left: 2rem;
+  transform: skew(5deg);
 }
 
 .project-title {
@@ -169,19 +192,27 @@ main {
 }
 
 .card-img-container {
-  /* display: flex;
-  justify-content: space-between; */
-  margin: 1rem 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  margin-top: 2rem;
+  /* transform: skew(-5deg); */
 }
 
 .project-stack {
   margin-top: 1rem;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+
+.stack-item {
+  padding: 0.5rem;
 }
 
 .project-stack svg {
+  margin: 0 auto;
   height: 40px;
   width: 40px;
 }
@@ -365,7 +396,7 @@ body[data-nav="true"] > main {
   height: 4px;
   background: var(--clr-blue);
   z-index: 10000;
-  transition: width 200ms ease;
+  /* transition: width 200ms ease; */
 }
 
 /* Mouse Trailer */

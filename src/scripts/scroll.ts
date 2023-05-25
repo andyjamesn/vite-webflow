@@ -8,9 +8,9 @@ export const setUpScroll = () => {
     e.preventDefault();
     let scrollBy = 0;
     if (e.deltaY > 0) {
-      scrollBy = e.deltaY + window.innerWidth;
+      scrollBy = e.deltaY + window.innerWidth / 2;
     } else {
-      scrollBy = e.deltaY - window.innerWidth;
+      scrollBy = e.deltaY - window.innerWidth / 2;
     }
 
     scrollContainer!.scrollLeft += scrollBy;
