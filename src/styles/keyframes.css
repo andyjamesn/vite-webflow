@@ -37,3 +37,12 @@
     --gradient-angle: 360deg;
   }
 }
+
+@keyframes fading {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

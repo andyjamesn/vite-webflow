@@ -104,19 +104,6 @@ main {
   color: var(--clr-blue);
 }
 
-.wavy {
-  color: transparent;
-  -webkit-text-stroke: 2px var(--clr-blue);
-  position: relative;
-}
-
-.wavy:before {
-  content: "Hi, I'm Allef Soares";
-  color: var(--clr-blue);
-  position: absolute;
-  animation: wavy 4s ease-in-out infinite;
-}
-
 /* Projects */
 .projects {
   display: flex;
@@ -166,11 +153,11 @@ main {
 }
 
 .open-card .card-content {
-  opacity: 1 !important;
+  display: block !important;
 }
 
 .project-card .card-content {
-  opacity: 0;
+  display: none;
 }
 
 .card-content {
@@ -180,11 +167,15 @@ main {
   height: 100%;
   display: flex;
   flex-direction: column;
-  transition: opacity 500ms ease;
   transform: skew(5deg);
+
+  opacity: 0;
+  animation: fading 500ms ease-in forwards;
+  animation-delay: 300ms;
 }
 
 .project-title {
+  margin-top: 1rem;
   color: var(--clr-blue);
   text-align: center;
   font-size: clamp(1rem, 5vw, 2rem);
