@@ -170,8 +170,8 @@ main {
   transform: skew(5deg);
 
   opacity: 0;
-  animation: fading 500ms ease-in forwards;
-  animation-delay: 300ms;
+  animation: fading 200ms ease-in forwards;
+  animation-delay: 200ms;
 }
 
 .project-title {
