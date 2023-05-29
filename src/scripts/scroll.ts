@@ -1,27 +1,18 @@
-const scrollContainer = document.querySelector("main");
-const scrollProgress = document.getElementById("scroll-progress");
-const numPages = document.querySelectorAll(".page").length;
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
-export const setUpScroll = () => {
-  //Scroll Horizontal
-  scrollContainer!.addEventListener("wheel", (e: any) => {
-    e.preventDefault();
-    let scrollBy = 0;
-    if (e.deltaY > 0) {
-      scrollBy = e.deltaY + window.innerWidth / 2;
-    } else {
-      scrollBy = e.deltaY - window.innerWidth / 2;
-    }
+const sections = gsap.utils.toArray(".page-container section");
 
-    scrollContainer!.scrollLeft += scrollBy;
-  });
-
-  //Scroll Percentage
-  scrollContainer!.addEventListener("scroll", () => {
-    //Works for number of pages
-    const docWidth = document.documentElement.scrollWidth * (numPages - 1);
-    const scrollLeft = scrollContainer!.scrollLeft;
-
-    scrollProgress!.style.width = `${(scrollLeft / docWidth) * 100}%`;
-  });
-};
+gsap.to(sections, {
+  xPercent: -100 * (sections.length - 1),
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".page-container",
+    pin: true,
+    scrub: 1,
+    end: "+=3000",
+    // snap: 1 / (sections.length - 1),
+    // markers: true,
+  },
+});

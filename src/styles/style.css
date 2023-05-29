@@ -21,49 +21,38 @@
 }
 
 body {
-  height: 100vh;
+  min-height: 100vh;
   font-family: "General Sans", sans-serif;
   color: var(--clr-blue);
-  z-index: 2;
-  position: relative;
-  overflow: hidden;
+  background-color: var(--bg-dark);
 }
 
 main {
   width: 100%;
   height: 100%;
-  display: flex;
   background-color: var(--bg-dark);
   transition: transform 400ms cubic-bezier(0.175, 0.65, 0.32, 0.85);
-
   z-index: 2;
-  position: relative;
 
-  overflow-y: hidden;
-  overflow-x: hidden;
+  position: relative;
   scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
+  overflow-x: hidden;
+}
+
+.page-container {
+  display: flex;
 }
 
 /* Page */
 .page {
+  position: relative;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+
   flex: none;
-  overflow: hidden;
-
-  scroll-snap-align: start;
-}
-
-/* Page Container */
-.container {
-  width: 90%;
-  height: 80%;
-  border-radius: 1rem;
-  padding: 1rem;
 }
 
 /* Home */
@@ -78,7 +67,6 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* border: 2px solid var(--clr-blue); */
 }
 
 .home-letters {
@@ -106,10 +94,11 @@ main {
 
 /* Projects */
 .projects {
+  width: 85%;
+  margin: 0 auto;
   display: flex;
   gap: 0.5rem;
   position: relative;
-  /* background: var(--bg-dark); */
 }
 
 .projects:before {
@@ -134,13 +123,15 @@ main {
 
 .project-card {
   position: relative;
+  height: 700px;
   flex: 0.5;
   border-radius: 1rem;
-  overflow: hidden;
   transition: flex 500ms cubic-bezier(0.175, 0.65, 0.32, 0.85);
   background-color: rgba(37, 37, 35, 0.75);
   border: 2px solid var(--clr-blue);
   transform: skew(-5deg);
+
+  overflow: hidden;
 }
 
 .project-card:hover {
@@ -236,8 +227,19 @@ main {
     flex-direction: column;
   }
 
-  .project-card {
-    /* flex: 1; */
+  .projects:before,
+  .project-card,
+  .card-content {
+    transform: skew(0deg);
+  }
+
+  .project-card,
+  .open-card {
+    flex: 1;
+  }
+
+  .project-card .card-content {
+    display: block;
   }
 }
 
@@ -249,6 +251,7 @@ main {
   position: fixed;
   transition: transform 200ms ease;
   transform: scale(0.9);
+  z-index: 3;
 }
 
 #dark-mode-toggle:hover {
@@ -257,30 +260,32 @@ main {
 
 /* NAV */
 nav {
-  height: 20vh;
-  width: 100%;
-  position: absolute;
+  height: 100%;
+  width: 20vw;
+  position: fixed;
   left: 0px;
-  bottom: 0px;
-  z-index: 1;
+  top: 0px;
+  z-index: 4;
   overflow: hidden;
   background: var(--bg-light);
+
+  transition: transform 400ms cubic-bezier(0.175, 0.65, 0.32, 0.85);
+  transform: translateX(-20vw);
 }
 
 #nav-links {
   height: 100%;
   display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
+  flex-flow: column wrap;
+  justify-content: space-evenly;
   align-items: center;
   /* gap: clamp(1rem, 2vw, 2rem);
   padding: 0rem clamp(1rem, 2vw, 2rem); */
-  transform: translateY(70%) scale(0.9);
+  transform: translateX(-70%) scale(0.9);
   transition: transform 400ms cubic-bezier(0.175, 0.65, 0.32, 0.85);
 }
 
 .nav-link {
-  flex-grow: 1;
   text-align: center;
   list-style: none;
 }
@@ -318,7 +323,11 @@ nav {
 }
 
 body[data-nav="true"] > nav > #nav-links {
-  transform: translateY(0%) scale(1);
+  transform: translateX(0%) scale(1);
+}
+
+body[data-nav="true"] > nav {
+  transform: translateX(0);
 }
 
 /* Nav Toggle */
@@ -326,7 +335,7 @@ body[data-nav="true"] > nav > #nav-links {
   width: 5rem;
   aspect-ratio: 1;
   position: fixed;
-  z-index: 3;
+  z-index: 10000;
   left: 50%;
   bottom: 4rem;
   margin: auto;
@@ -358,18 +367,15 @@ body[data-nav="true"] > #nav-toggle > .close {
   transform: translate(-50%, -50%) scale(1);
 }
 
-body[data-nav="true"] > main {
-  transform: translateY(-20%);
-}
-
 /* Media Query for Nav Toggle */
 @media (width < 900px) {
-  body[data-nav="true"] > main {
-    transform: translateY(-100%);
+  nav {
+    transform: translateX(-100%);
+    width: 100%;
   }
 
-  nav {
-    height: 100%;
+  body[data-nav="true"] > nav {
+    transform: translateX(0%);
   }
 
   #nav-links {
@@ -377,6 +383,7 @@ body[data-nav="true"] > main {
     justify-content: center;
     align-items: center;
     gap: 4rem;
+    transform: translateX(70%) scale(0.9);
   }
 
   .nav-link {

@@ -1,6 +1,6 @@
-import { setUpTrailer } from "./scripts/trailer";
-import { setUpScroll } from "./scripts/scroll";
+// import { setUpTrailer } from "./scripts/trailer";
 import { setUpDarkMode } from "./scripts/darkMode";
+import "./scripts/scroll.ts";
 import "./styles/style.css";
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -24,9 +24,8 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   setUpHomeTitleAnimation();
-  setUpScroll();
   setUpDarkMode();
-  setUpTrailer();
+  // setUpTrailer();
 });
 
 const setUpHomeTitleAnimation = () => {
