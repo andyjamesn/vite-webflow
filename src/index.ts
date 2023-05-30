@@ -1,6 +1,6 @@
 // import { setUpTrailer } from "./scripts/trailer";
 import { setUpDarkMode } from "./scripts/darkMode";
-import "./scripts/scroll.ts";
+import "./scripts/gsap.ts";
 import "./styles/style.css";
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -23,26 +23,26 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  setUpHomeTitleAnimation();
+  // setUpHomeTitleAnimation();
   setUpDarkMode();
   // setUpTrailer();
 });
 
-const setUpHomeTitleAnimation = () => {
-  const homeTitles = [
-    ...(document.getElementsByClassName(
-      "home-title"
-    ) as HTMLCollectionOf<HTMLElement>),
-  ];
-  const windowWidth = window.innerWidth;
+// const setUpHomeTitleAnimation = () => {
+//   const homeTitles = [
+//     ...(document.getElementsByClassName(
+//       "home-title"
+//     ) as HTMLCollectionOf<HTMLElement>),
+//   ];
+//   const windowWidth = window.innerWidth;
 
-  window.addEventListener("mousemove", (e) => {
-    if (e.clientX < windowWidth / 2) {
-      homeTitles[0].style.backgroundColor = "#0466c8";
-      homeTitles[1].style.backgroundColor = "";
-    } else {
-      homeTitles[1].style.backgroundColor = "#0466c8";
-      homeTitles[0].style.backgroundColor = "";
-    }
-  });
-};
+//   window.addEventListener("mousemove", (e) => {
+//     if (e.clientX < windowWidth / 2) {
+//       homeTitles[0].style.backgroundColor = "#0466c8";
+//       homeTitles[1].style.backgroundColor = "";
+//     } else {
+//       homeTitles[1].style.backgroundColor = "#0466c8";
+//       homeTitles[0].style.backgroundColor = "";
+//     }
+//   });
+// };
