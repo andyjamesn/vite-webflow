@@ -12,8 +12,7 @@ const cardContents = document.querySelectorAll(".card-content");
 
 const projectCardTL = gsap.timeline({
   scrollTrigger: ".project-title",
-  markers: true,
-  start: "top 50%",
+  start: "bottom center",
 });
 
 projectCardTL.to(projectCards, {
@@ -28,8 +27,7 @@ projectCardTL.to(cardContents, {
   stagger: 0.15,
 });
 
-//Home BG Animation
-
+//Home Title Animation
 gsap.to(".home-title", {
   y: 0,
   opacity: 1,
@@ -38,6 +36,7 @@ gsap.to(".home-title", {
   stagger: 0.5,
 });
 
+//Home BG Animation
 home!.addEventListener("mousemove", (e) => {
   const depth = 20;
   let dirChange = 1;

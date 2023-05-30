@@ -98,8 +98,6 @@ main {
 .home-bg1,
 .home-bg2 {
   opacity: 0.5;
-  /* top: -22%;
-  left: 12%; */
   height: 1500px;
   width: 1500px;
   position: absolute;
@@ -117,18 +115,9 @@ main {
   font-family: "Chillax Bold";
   font-size: clamp(1.5rem, 10vw, 5rem);
   font-weight: 800;
-  color: var(--clr-blue);
-
+  color: var(--clr-green);
   transform: translateY(200px);
   opacity: 0;
-  /* color: transparent;
-  text-transform: uppercase;
-  letter-spacing: 5px;
-  -webkit-text-stroke: 2px var(--clr-blue);
-  background-clip: text;
-  position: relative;
-  transition: background-color 2s ease;
-  transition-delay: 100ms; */
 }
 
 .home-description {
@@ -258,6 +247,7 @@ main {
 .stack-item svg {
   height: 40px;
   width: 40px;
+  color: var(--clr-green);
 }
 
 /* Media Query for Projects Page */
