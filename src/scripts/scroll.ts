@@ -1,31 +1,25 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 gsap.registerPlugin(ScrollTrigger);
-gsap.registerPlugin(ScrollToPlugin);
 
-const sections = gsap.utils.toArray(".page-container section");
-const docSections = document.querySelectorAll(".nav-link-label");
-const clientHeight = document.documentElement.clientHeight;
+const homeBGS = document.querySelectorAll(".bg");
+const home = document.getElementById("home");
 
-gsap.to(sections, {
-  xPercent: -100 * (sections.length - 1),
-  ease: "none",
-  scrollTrigger: {
-    trigger: ".page-container",
-    pin: true,
-    scrub: 1,
-    end: "+=3000",
-    // snap: 1 / (sections.length - 1),
-    // markers: true,
-  },
-});
+home!.addEventListener("mousemove", (e) => {
+  const depth = 20;
+  let dirChange = 1;
+  homeBGS.forEach((bg, idx) => {
+    idx == 1 ? (dirChange *= -1) : "";
+    const moveX = ((e.pageX - window.innerWidth / 2) / depth) * dirChange;
+    const moveY = (e.pageY - window.innerHeight / 2) / depth;
+    idx++;
 
-docSections.forEach((sec, idx) => {
-  sec.addEventListener("click", () => {
-    gsap.to(window, {
-      duration: 2,
-      scrollTo: { y: clientHeight * idx, offsetY: -50 * idx },
+    gsap.to(bg, {
+      x: moveX * idx,
+      y: moveY * idx,
+      delay: 0.2,
+      ease: "power3",
+      duration: 6,
     });
   });
 });
