@@ -11,8 +11,8 @@ const projectCards = document.querySelectorAll(".project-card");
 const cardContents = document.querySelectorAll(".card-content");
 
 const projectCardTL = gsap.timeline({
-  scrollTrigger: ".project-title",
-  start: "bottom center",
+  scrollTrigger: ".project-description",
+  start: "bottom bottom",
 });
 
 projectCardTL.to(projectCards, {
@@ -21,7 +21,7 @@ projectCardTL.to(projectCards, {
   stagger: 0.1,
 });
 
-projectCardTL.to(cardContents, {
+projectCardTL.to(cardContents[0], {
   opacity: 1,
   duration: 0.2,
   stagger: 0.15,

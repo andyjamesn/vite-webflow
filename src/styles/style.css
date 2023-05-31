@@ -129,8 +129,6 @@ main {
 .projects {
   width: 85%;
   margin: 0 auto;
-  display: flex;
-  gap: 0.5rem;
   position: relative;
 }
 
@@ -151,49 +149,26 @@ main {
   z-index: -2;
   filter: blur(10rem);
   opacity: 0.5;
-  transform: skew(-5deg);
 }
 
 .project-card {
   position: relative;
-  height: 700px;
-  flex: 0.5;
   border-radius: 1rem;
-  transition: flex 500ms cubic-bezier(0.175, 0.65, 0.32, 0.85);
-  background-color: rgba(37, 37, 35, 0.75);
-  border: 2px solid var(--clr-blue);
+  background-color: rgba(37, 37, 35, 0.95);
+  border: 3px solid var(--clr-blue);
+  height: 400px;
   overflow: hidden;
-
-  transform: skew(-5deg) translateX(300px);
-}
-
-.project-card:hover {
-  background-color: rgba(37, 37, 35, 1);
-}
-
-.open-card {
-  flex: 5;
-  background-color: rgba(37, 37, 35, 1);
-}
-
-.open-card .card-content {
-  display: block !important;
-}
-
-.project-card .card-content {
-  display: none;
 }
 
 .card-content {
   color: var(--always-light);
   padding: 1rem;
-  margin-left: 2rem;
   height: 100%;
+  width: 80%;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  transform: skew(5deg);
-
-  opacity: 0;
+  justify-content: space-between;
 }
 
 .project-title {
@@ -205,7 +180,6 @@ main {
 
 .project-description {
   margin: 1rem auto;
-  width: 90%;
   font-size: clamp(0.25rem, 5vw, 1rem);
 }
 
@@ -218,22 +192,19 @@ main {
 
 .card-img-container {
   margin-top: 1rem;
-  height: 75%;
-  width: 75%;
 }
 
 .project-stack {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-flow: row wrap;
 }
 
 .stack-item {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  width: 100%;
   padding: 0.5rem;
   text-align: center;
 }
@@ -241,52 +212,13 @@ main {
 .stack-item span {
   letter-spacing: 0.8px;
   font-size: clamp(0.25rem, 5vw, 1rem);
-  margin-left: 0.5rem;
+  margin-left: 1rem;
 }
 
 .stack-item svg {
   height: 40px;
   width: 40px;
   color: var(--clr-green);
-}
-
-/* Media Query for Projects Page */
-@media (width < 900px) {
-  .projects {
-    flex-direction: column;
-    width: 95%;
-  }
-
-  .projects:before,
-  .project-card,
-  .card-content {
-    transform: skew(0deg);
-  }
-
-  .project-card,
-  .open-card {
-    flex: 1;
-  }
-
-  .card-img-container {
-    display: none;
-  }
-
-  .card-content {
-    margin-left: 0;
-  }
-
-  .project-card .card-content {
-    display: block;
-  }
-
-  .project-stack {
-    flex-flow: row wrap;
-  }
-
-  .stack-item {
-    flex-basis: 10rem;
-  }
 }
 
 /* Dark Mode Toggle */
