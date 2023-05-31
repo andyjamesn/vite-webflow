@@ -55,6 +55,7 @@ main {
   align-items: center;
   flex-direction: column;
   position: relative;
+  overflow: hidden;
 }
 
 .dark-mode .home-bg1,
