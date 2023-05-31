@@ -26,3 +26,17 @@ button {
   background: none;
   cursor: pointer;
 }
+
+@font-face {
+  font-family: "Excon Regular";
+  font-weight: 400;
+  src: url("/Fonts/Excon-Regular.woff") format("woff"),
+    url("/Fonts/Excon-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Chillax Bold";
+  font-weight: 800;
+  src: url("/Fonts/Chillax-Bold.woff") format("woff"),
+    url("/Fonts/Chillax-Bold.woff2") format("woff2");
+}

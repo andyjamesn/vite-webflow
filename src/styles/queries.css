@@ -1,0 +1,28 @@
+/* Media Query for Nav Toggle */
+@media (width < 900px) {
+  nav {
+    transform: translateX(-100%);
+    width: 100%;
+  }
+
+  body[data-nav="true"] > nav {
+    transform: translateX(0);
+  }
+
+  #nav-links {
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    transform: translateX(70%) scale(0.9);
+  }
+
+  .nav-link {
+    flex-grow: 0;
+  }
+
+  #nav-toggle {
+    bottom: 2rem;
+    left: 50%;
+  }
+}

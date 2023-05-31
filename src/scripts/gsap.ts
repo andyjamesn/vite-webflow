@@ -3,31 +3,21 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const home = document.getElementById("home");
-const homeBGS = home!.querySelectorAll(".bg");
-
-//Projects Scroll Animations
+//Projects Animation
 const projectCards = document.querySelectorAll(".project-card");
-const cardContents = document.querySelectorAll(".card-content");
-
-const projectCardTL = gsap.timeline({
-  scrollTrigger: ".project-description",
-  start: "bottom bottom",
-});
-
-projectCardTL.to(projectCards, {
-  x: 0,
-  duration: 1,
-  stagger: 0.1,
-});
-
-projectCardTL.to(cardContents[0], {
-  opacity: 1,
-  duration: 0.2,
-  stagger: 0.15,
+projectCards.forEach((card) => {
+  card.addEventListener("click", () => {
+    if (document.querySelector(".active")) {
+      const currentActiveCard = document.querySelector(".active");
+      currentActiveCard!.classList.toggle("active");
+    }
+    card.classList.toggle("active");
+  });
 });
 
 //Home Title Animation
+const home = document.getElementById("home");
+const homeBGS = home!.querySelectorAll(".bg");
 gsap.to(".home-title", {
   y: 0,
   opacity: 1,
@@ -41,7 +31,10 @@ home!.addEventListener("mousemove", (e) => {
   const depth = 20;
   let dirChange = 1;
   homeBGS.forEach((bg, idx) => {
-    idx == 1 ? (dirChange *= -1) : "";
+    if (idx == 1) {
+      dirChange *= 1;
+    }
+
     const moveX = ((e.pageX - window.innerWidth / 2) / depth) * dirChange;
     const moveY = (e.pageY - window.innerHeight / 2) / depth;
     idx++;
