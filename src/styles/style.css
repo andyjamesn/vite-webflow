@@ -36,18 +36,11 @@ main {
 
   position: relative;
   scroll-behavior: smooth;
-  overflow-x: hidden;
 }
-
-/* .page-container {
-  display: flex;
-} */
 
 /* Page */
 .page {
   position: relative;
-  min-height: 100vh;
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -55,6 +48,8 @@ main {
 
 /* Home */
 #home {
+  height: 100vh;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -114,158 +109,6 @@ main {
 }
 
 /* Projects */
-.projects-wrapper {
-  width: 90%;
-  margin: 0 auto;
-  position: relative;
-  /* border: 1px solid red; */
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.projects-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-flow: row wrap;
-  gap: 1rem;
-}
-
-.mid-card {
-  height: 250px;
-  width: 250px;
-  position: relative;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 5rem;
-}
-
-.mid-card::after {
-  content: "";
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  border: 3px solid var(--clr-green);
-  transform: rotate(45deg);
-}
-
-.mid-card-title {
-  color: var(--bg-light);
-}
-
-.project-card {
-  -webkit-clip-path: polygon(
-    30% 0,
-    70% 0,
-    100% 30%,
-    100% 70%,
-    70% 100%,
-    30% 100%,
-    0 70%,
-    0 30%
-  );
-  clip-path: polygon(
-    30% 0,
-    70% 0,
-    100% 30%,
-    100% 70%,
-    70% 100%,
-    30% 100%,
-    0 70%,
-    0 30%
-  );
-
-  width: 250px;
-  height: 250px;
-  position: relative;
-  background: var(--bg-light);
-}
-
-.project-card:after {
-  content: "";
-  position: absolute;
-  top: 3px;
-  left: 3px;
-  bottom: 3px;
-  right: 3px;
-  background: var(--clr-blue);
-  -webkit-clip-path: polygon(
-    30% 0,
-    70% 0,
-    100% 30%,
-    100% 70%,
-    70% 100%,
-    30% 100%,
-    0 70%,
-    0 30%
-  );
-  clip-path: polygon(
-    30% 0,
-    70% 0,
-    100% 30%,
-    100% 70%,
-    70% 100%,
-    30% 100%,
-    0 70%,
-    0 30%
-  );
-}
-
-.active {
-  height: 250px;
-  width: 500px;
-  clip-path: none;
-}
-
-.project-card.active:after {
-  clip-path: none;
-}
-
-.card-content {
-  display: none;
-}
-
-.project-title {
-}
-
-.project-description {
-}
-
-.card-bottom {
-}
-
-.card-img-container {
-}
-
-.project-stack {
-}
-
-.stack-item {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 0.5rem;
-  text-align: center;
-}
-
-.stack-item span {
-  letter-spacing: 0.8px;
-  font-size: clamp(0.25rem, 5vw, 1rem);
-  margin-left: 1rem;
-}
-
-.stack-item svg {
-  height: 40px;
-  width: 40px;
-  color: var(--clr-green);
-}
 
 /* Dark Mode Toggle */
 #dark-mode-toggle {

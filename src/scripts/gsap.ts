@@ -32,7 +32,7 @@ home!.addEventListener("mousemove", (e) => {
   let dirChange = 1;
   homeBGS.forEach((bg, idx) => {
     if (idx == 1) {
-      dirChange *= 1;
+      dirChange *= -1;
     }
 
     const moveX = ((e.pageX - window.innerWidth / 2) / depth) * dirChange;
