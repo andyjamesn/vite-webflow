@@ -3,21 +3,19 @@
 
 :root {
   --bg-dark: #252323;
-  --bg-light: #d2d2d3;
+  --bg-light: #e7efff;
   --text-light: var(--bg-light);
   --text-dark: var(--bg-dark);
   --clr-blue: #0466c8;
-  --clr-blue-500-dark: #2e73b9;
-  --clr-blue-500-light: #30577e;
   --clr-green: #0a9456;
-  --always-light: #d2d2d3;
+  --always-light: #e7efff;
 }
 
 .dark-mode {
-  --bg-dark: #d2d2d3;
+  --bg-dark: #e7efff;
   --bg-light: #252323;
   --text-light: #252323;
-  --text-dark: #d2d2d3;
+  --text-dark: #e7efff;
 }
 
 body {
@@ -33,7 +31,6 @@ main {
   background-color: var(--bg-dark);
   transition: transform 400ms cubic-bezier(0.175, 0.65, 0.32, 0.85);
   z-index: 2;
-
   position: relative;
   scroll-behavior: smooth;
 }
@@ -65,17 +62,15 @@ main {
 }
 
 .home-bg1 {
-  background: url("/newnewBG1.png");
+  background: url("/newnewnewBG1.png");
   top: 0%;
-  left: 12%;
+  left: 0%;
 }
-
 .home-bg2 {
   background: url("/newnewBG2.png");
   top: -20%;
   left: 20%;
 }
-
 .home-bg3 {
   background: url("/newnewBG2.png");
   top: 10%;
@@ -87,12 +82,17 @@ main {
 .home-bg2,
 .home-bg3 {
   opacity: 0.5;
-  height: 1200px;
-  width: 1200px;
+  height: 100%;
+  width: 100%;
   position: absolute;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+  z-index: -1;
+}
+
+.home-content {
+  padding: 1rem;
 }
 
 .home-title {
@@ -100,13 +100,68 @@ main {
   font-size: clamp(1.5rem, 10vw, 5rem);
   font-weight: 800;
   color: var(--bg-light);
+  position: relative;
+
   transform: translateY(200px);
   opacity: 0;
 }
 
+.home-title:after {
+  content: "";
+  position: absolute;
+  bottom: 22%;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background: var(--clr-blue);
+  z-index: -1;
+}
+
 .home-description {
-  font-size: clamp(0.75rem, 10vw, 1.25rem);
-  color: var(--clr-blue);
+  color: var(--bg-light);
+  font-weight: 400;
+  font-size: clamp(0.75rem, 10vw, 1.5rem);
+  position: relative;
+
+  transform: translateY(200px);
+  opacity: 0;
+}
+
+.home-description:after {
+  /* content: "...";
+  position: absolute;
+  bottom: -26%;
+  right: 1%;
+  font-size: 3rem;
+  color: var(--clr-blue); */
+}
+
+.dots-container {
+  display: flex;
+}
+
+.dots {
+  display: flex;
+  margin-bottom: 5px;
+  margin-left: 5px;
+}
+
+.dot {
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  background-color: var(--clr-blue);
+  margin-right: 5px;
+  align-self: flex-end;
+  animation: dotWave 3s infinite ease;
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.4s;
 }
 
 /* Projects */
