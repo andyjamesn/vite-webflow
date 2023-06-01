@@ -1,6 +1,25 @@
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
-let homeTL = gsap.timeline();
+const homeTL = gsap.timeline();
+
+//Project Card Horizontal Scroll
+const projectCards = gsap.utils.toArray(".project-card");
+const horizontalScrollTween = gsap.to(projectCards, {
+  xPercent: -100 * (projectCards.length - 1),
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".projects-wrapper",
+    pin: "#projects",
+    start: "center center",
+    scrub: 1,
+    end: "+=3000",
+  },
+});
+
+//Project Card Horizontal Scroll Fade Animation
+// projectCards.forEach((card) => {});
 
 //Home Title Animation
 const home = document.getElementById("home");
