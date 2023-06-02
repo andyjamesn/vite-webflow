@@ -16,6 +16,7 @@ desktopAnimations.add("(min-width: 800px)", () => {
       start: "center center",
       scrub: 1,
       end: "+=1000",
+      markers: true,
     },
   });
 });
