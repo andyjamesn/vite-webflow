@@ -4,18 +4,23 @@
 :root {
   --bg-dark: #252323;
   --bg-light: #e7efff;
-  --text-light: var(--bg-light);
-  --text-dark: var(--bg-dark);
   --clr-blue: #0466c8;
   --clr-green: #0a9456;
+  --clr-gray: #757272;
   --always-light: #e7efff;
+}
+
+.gray {
+  color: var(--clr-gray);
+}
+
+.blue {
+  color: var(--clr-blue);
 }
 
 .dark-mode {
   --bg-dark: #e7efff;
   --bg-light: #252323;
-  --text-light: #252323;
-  --text-dark: #e7efff;
 }
 
 body {
@@ -177,63 +182,79 @@ main {
 }
 
 .project-card {
-  flex: 1 0 33%;
-  background-color: var(--bg-light);
+  flex: 0 0 45rem;
   border-radius: 0.5rem;
-  cursor: pointer;
-
   position: relative;
-}
-
-.card-text {
-  padding: 1rem;
-  border-radius: 0.5rem;
-  height: 140px;
-}
-
-.card-title {
-  color: var(--clr-blue);
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  text-align: center;
-}
-
-.card-description {
-  color: var(--bg-dark);
 }
 
 .card-img-container {
   width: 100%;
-  height: 250px;
+  height: 350px;
   border-radius: 0.5rem;
-  margin-top: 0.5rem;
+  box-shadow:
+		/* offset-x | offset-y | blur-radius | spread-radius | color */ 0px
+      4px 5px 0px hsla(0, 0%, 0%, 0.14),
+    0px 1px 10px 0px hsla(0, 0%, 0%, 0.12),
+    0px 2px 4px -1px hsla(0, 0%, 0%, 0.2);
 }
+
 .card-img {
   width: 100%;
   height: 100%;
-  border-radius: 0 0 0.5rem 0.5rem;
-}
-
-.under-card {
-  position: absolute;
-  background: var(--bg-light);
   border-radius: 0.5rem;
-  bottom: 0;
-  left: 0;
-  height: 100px;
-  width: 100%;
-  transition: all 500ms ease;
-  transform: translateY(50px);
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  z-index: -1;
 }
 
-.under-card-content {
+.card-text {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-title {
+  color: var(--bg-light);
+  font-weight: 600;
+}
+
+.card-link {
   padding: 0.5rem;
+  cursor: pointer;
+  color: var(--clr-blue);
+  position: relative;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
 }
 
-.project-card:hover .under-card {
-  transform: translateY(90px);
+.card-link:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: var(--clr-gray);
+  opacity: 0.1;
+  border-radius: 50%;
+  transition: opacity 500ms ease;
+}
+
+.card-link:hover:before {
+  opacity: 0.3;
+}
+
+.card-stack {
+  margin-top: 0.5rem;
+  width: 75%;
+  display: flex;
+}
+
+.stack-item {
+  padding: 4px;
+  border: 1px solid var(--clr-blue);
+  color: var(--bg-light);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  margin-right: 0.5rem;
 }
 
 /* Skills */
