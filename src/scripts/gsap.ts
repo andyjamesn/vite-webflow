@@ -2,11 +2,12 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
+const projectCards = gsap.utils.toArray(".project-card");
+
 const desktopAnimations = gsap.matchMedia();
 desktopAnimations.add("(min-width: 800px)", () => {
   //Project Card Horizontal Scroll
-  const projectCards = gsap.utils.toArray(".project-card");
-  const horizontalScrollTween = gsap.to(projectCards, {
+  gsap.to(projectCards, {
     xPercent: -100 * (projectCards.length - 1),
     ease: "none",
     scrollTrigger: {
@@ -20,7 +21,18 @@ desktopAnimations.add("(min-width: 800px)", () => {
 });
 
 //Project Card Horizontal Scroll Fade Animation
-// projectCards.forEach((card) => {});
+//@ts-ignore
+gsap.from(projectCards, {
+  y: 130,
+  opacity: 0,
+  duration: 0.5,
+  delay: 0.2,
+  stagger: 0.5,
+  scrollTrigger: {
+    trigger: ".projects-wrapper",
+    start: "top center",
+  },
+});
 
 //Home Title Animation
 const homeTL = gsap.timeline();

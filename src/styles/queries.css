@@ -40,6 +40,10 @@
     height: 50%;
   }
 
+  .fill .card-img-container {
+    height: auto;
+  }
+
   .card-stack {
     width: 100%;
     flex-flow: row wrap;
