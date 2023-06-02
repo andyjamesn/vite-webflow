@@ -32,8 +32,14 @@
     flex-direction: column;
   }
 
+  .shape-bg {
+    /* right: -75%; */
+    display: none;
+  }
+
   .project-card {
     flex: 1 1 25rem;
+    margin-top: 3rem;
   }
 
   .card-link {
@@ -42,6 +48,10 @@
 
   .fill .card-img-container {
     height: auto;
+  }
+
+  .card-img-container img {
+    object-fit: cover;
   }
 
   .card-stack {

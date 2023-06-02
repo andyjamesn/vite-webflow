@@ -12,6 +12,8 @@
 
 .gray {
   color: var(--clr-gray);
+  font-family: "Excon Regular";
+  font-size: 1.5rem;
 }
 
 .blue {
@@ -164,17 +166,19 @@ main {
 /* Projects */
 #projects {
   margin-top: 5rem;
+  position: relative;
 }
 
 .projects-wrapper {
   width: 90%;
-  min-height: 75vh;
+  min-height: 60vh;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
 }
 
-.projects-title {
+.projects-title,
+.skills-title {
   color: var(--bg-light);
   font-size: clamp(1rem, 10vw, 2rem);
   margin-bottom: 1rem;
@@ -271,6 +275,69 @@ main {
 
 /* Skills */
 #skills {
+  margin-top: 10rem;
+  position: relative;
+}
+
+.skills-wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.skills-container {
+  width: 100%;
+  display: flex;
+  gap: 3rem;
+  flex-flow: row wrap;
+}
+
+.skills {
+  flex: 4;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 250px));
+  gap: 0.5rem;
+}
+
+.skill-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border: 2px solid var(--clr-blue);
+  color: var(--bg-light);
+  border-radius: 0.5rem;
+  box-shadow:
+  /* offset-x | offset-y | blur-radius | spread-radius | color */ 0px
+      4px 5px 0px hsla(0, 0%, 0%, 0.14),
+    0px 1px 10px 0px hsla(0, 0%, 0%, 0.12),
+    0px 2px 4px -1px hsla(0, 0%, 0%, 0.2);
+}
+
+.skill-item:nth-child(even) {
+  border-color: var(--clr-blue);
+}
+
+.skill-item svg {
+  margin-right: 1rem;
+  height: 32px;
+  width: 32px;
+}
+
+.skills-info {
+  flex: 2;
+}
+
+.shape-bg {
+  height: 1200px;
+  width: 700px;
+  background: var(--clr-blue);
+  clip-path: polygon(60% 15%, 100% 0%, 100% 100%, 42% 83%, 24% 26%);
+  position: absolute;
+  z-index: -1;
+  bottom: -50%;
+  right: 0%;
 }
 
 /* Dark Mode Toggle */

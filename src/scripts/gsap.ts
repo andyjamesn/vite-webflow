@@ -15,13 +15,14 @@ desktopAnimations.add("(min-width: 800px)", () => {
       pin: ".projects-wrapper",
       start: "center center",
       scrub: 1,
+      end: "+=1000",
     },
   });
 });
 
 //Project Title Fade Animation
 
-gsap.from(".projects-title", {
+gsap.from(".fadein", {
   opacity: 0,
   duration: 0.25,
   delay: 0.1,
