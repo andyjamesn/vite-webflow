@@ -26,3 +26,26 @@
     left: 50%;
   }
 }
+
+@media (width < 800px) {
+  .projects-container {
+    flex-direction: column;
+  }
+
+  .project-card {
+    flex: 1 1 25rem;
+  }
+
+  .card-link {
+    height: 50%;
+  }
+
+  .card-stack {
+    width: 100%;
+    flex-flow: row wrap;
+  }
+
+  .stack-item {
+    margin-top: 0.5rem;
+  }
+}
