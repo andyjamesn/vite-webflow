@@ -11,14 +11,25 @@ desktopAnimations.add("(min-width: 800px)", () => {
     xPercent: -100 * (projectCards.length - 1),
     ease: "none",
     scrollTrigger: {
-      trigger: ".projects-wrapper",
-      pin: "#projects",
+      trigger: ".projects-container",
+      pin: ".projects-wrapper",
       start: "center center",
       scrub: 1,
-      end: "+=1000",
-      markers: true,
     },
   });
+});
+
+//Project Title Fade Animation
+
+gsap.from(".projects-title", {
+  opacity: 0,
+  duration: 0.25,
+  delay: 0.1,
+  stagger: 0.5,
+  scrollTrigger: {
+    trigger: "#projects",
+    start: "top center",
+  },
 });
 
 //Project Card Horizontal Scroll Fade Animation
