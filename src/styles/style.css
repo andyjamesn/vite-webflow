@@ -284,20 +284,23 @@ main {
   margin: 0 auto;
 }
 
+.skills-title {
+  text-align: end;
+}
+
 .skills-container {
   width: 100%;
   display: flex;
   gap: 3rem;
-  flex-flow: row wrap;
+  flex-flow: row-reverse wrap;
 }
 
 .skills {
   flex: 4;
-  display: grid;
-  align-items: center;
-  justify-items: center;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 250px));
   gap: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 250px));
+  justify-content: end;
 }
 
 .skill-item {
@@ -305,7 +308,7 @@ main {
   display: flex;
   align-items: center;
   padding: 1rem;
-  border: 2px solid var(--clr-blue);
+  border: 1px solid var(--clr-gray);
   color: var(--bg-light);
   border-radius: 0.5rem;
   box-shadow:
@@ -313,10 +316,6 @@ main {
       4px 5px 0px hsla(0, 0%, 0%, 0.14),
     0px 1px 10px 0px hsla(0, 0%, 0%, 0.12),
     0px 2px 4px -1px hsla(0, 0%, 0%, 0.2);
-}
-
-.skill-item:nth-child(even) {
-  border-color: var(--clr-blue);
 }
 
 .skill-item svg {
@@ -337,7 +336,8 @@ main {
   position: absolute;
   z-index: -1;
   bottom: -50%;
-  right: 0%;
+  left: 0%;
+  transform: rotate(180deg);
 }
 
 /* Dark Mode Toggle */
