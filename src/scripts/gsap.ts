@@ -3,6 +3,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const projectCards = gsap.utils.toArray(".project-card");
+const skillCards = gsap.utils.toArray(".skill-item");
 
 const desktopAnimations = gsap.matchMedia();
 desktopAnimations.add("(min-width: 800px)", () => {
@@ -18,10 +19,39 @@ desktopAnimations.add("(min-width: 800px)", () => {
       end: "+=1000",
     },
   });
+
+  const skillTL = gsap.timeline();
+  //Skill Title Fade In
+  skillTL.to(".skills-title", {
+    opacity: 1,
+    y: 0,
+    duration: 0.25,
+    delay: 0.1,
+    stagger: 0.5,
+    scrollTrigger: {
+      trigger: "#skills",
+      start: "center bottom",
+      markers: true,
+    },
+  });
+
+  //Skill Cards Fade In Animation
+  skillTL.to(skillCards, {
+    opacity: 1,
+    ease: "none",
+    stagger: 0.5,
+    duration: 3,
+    scrollTrigger: {
+      trigger: "#skills",
+      start: "top bottom",
+      end: "center 50%",
+      scrub: 1,
+      once: true,
+    },
+  });
 });
 
 //Project Title Fade Animation
-
 gsap.from(".fadein", {
   opacity: 0,
   duration: 0.25,

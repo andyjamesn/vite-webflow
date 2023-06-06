@@ -275,7 +275,7 @@ main {
 
 /* Skills */
 #skills {
-  margin-top: 10rem;
+  padding-top: 10rem;
   position: relative;
 }
 
@@ -286,6 +286,9 @@ main {
 
 .skills-title {
   text-align: end;
+
+  opacity: 0;
+  transform: translateY(100px);
 }
 
 .skills-container {
@@ -317,6 +320,8 @@ main {
       4px 5px 0px hsla(0, 0%, 0%, 0.14),
     0px 1px 10px 0px hsla(0, 0%, 0%, 0.12),
     0px 2px 4px -1px hsla(0, 0%, 0%, 0.2);
+
+  opacity: 0;
 }
 
 .skill-item svg {
@@ -339,6 +344,10 @@ main {
   bottom: -50%;
   left: 0%;
   transform: rotate(180deg);
+}
+
+#contact {
+  height: 100vh;
 }
 
 /* Dark Mode Toggle */
