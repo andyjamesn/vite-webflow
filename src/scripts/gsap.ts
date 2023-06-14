@@ -31,7 +31,6 @@ desktopAnimations.add("(min-width: 800px)", () => {
     scrollTrigger: {
       trigger: "#skills",
       start: "center bottom",
-      markers: true,
     },
   });
 
