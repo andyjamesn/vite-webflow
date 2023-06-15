@@ -321,7 +321,7 @@ main {
     0px 1px 10px 0px hsla(0, 0%, 0%, 0.12),
     0px 2px 4px -1px hsla(0, 0%, 0%, 0.2);
 
-  opacity: 0;
+  /* opacity: 0; */
 }
 
 .skill-item svg {

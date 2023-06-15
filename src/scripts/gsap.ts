@@ -35,15 +35,15 @@ desktopAnimations.add("(min-width: 800px)", () => {
   });
 
   //Skill Cards Fade In Animation
-  skillTL.to(skillCards, {
-    opacity: 1,
+  skillTL.from(skillCards, {
+    opacity: 0,
     ease: "none",
     stagger: 0.5,
     duration: 3,
     scrollTrigger: {
       trigger: "#skills",
       start: "top bottom",
-      end: "center 50%",
+      end: "center 20%",
       scrub: 1,
       once: true,
     },
