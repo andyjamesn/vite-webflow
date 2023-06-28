@@ -22,8 +22,9 @@
   }
 
   #nav-toggle {
-    bottom: 2rem;
-    left: 50%;
+    width: 3rem;
+    top: 1rem;
+    left: 10%;
   }
 }
 

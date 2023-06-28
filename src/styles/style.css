@@ -61,6 +61,8 @@ main {
   flex-direction: column;
   position: relative;
   overflow: hidden;
+
+  border: 1px solid yellow;
 }
 
 .dark-mode .home-bg1,
@@ -167,6 +169,7 @@ main {
 #projects {
   margin-top: 5rem;
   position: relative;
+  border: 1px solid green;
 }
 
 .projects-wrapper {
@@ -178,7 +181,8 @@ main {
 }
 
 .projects-title,
-.skills-title {
+.skills-title,
+.contact-title {
   color: var(--bg-light);
   font-size: clamp(1rem, 10vw, 2rem);
   margin-bottom: 1rem;
@@ -275,8 +279,10 @@ main {
 
 /* Skills */
 #skills {
-  padding-top: 10rem;
+  /* padding-top: 10rem; */
+  margin-top: 10rem;
   position: relative;
+  border: 1px solid pink;
 }
 
 .skills-wrapper {
@@ -346,8 +352,17 @@ main {
   transform: rotate(180deg);
 }
 
+/* Contact */
+
 #contact {
-  height: 100vh;
+  border: 1px solid red;
+  margin-top: 10rem;
+  position: relative;
+}
+
+.contact-wrapper {
+  width: 90%;
+  margin: 0 auto;
 }
 
 /* Dark Mode Toggle */
@@ -443,7 +458,7 @@ body[data-nav="true"] > nav {
   position: fixed;
   z-index: 10000;
   left: 4%;
-  bottom: 2rem;
+  top: 1rem;
   margin: auto;
   transform: translateX(-50%);
   background-color: var(--clr-blue);
