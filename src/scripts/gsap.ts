@@ -21,18 +21,6 @@ desktopAnimations.add("(min-width: 800px)", () => {
   });
 
   const skillTL = gsap.timeline();
-  //Skill Title Fade In
-  skillTL.to(".skills-title", {
-    opacity: 1,
-    y: 0,
-    duration: 0.25,
-    delay: 0.1,
-    stagger: 0.5,
-    scrollTrigger: {
-      trigger: "#skills",
-      start: "center bottom",
-    },
-  });
 
   //Skill Cards Fade In Animation
   skillTL.from(skillCards, {
@@ -43,11 +31,24 @@ desktopAnimations.add("(min-width: 800px)", () => {
     scrollTrigger: {
       trigger: "#skills",
       start: "top bottom",
-      end: "center 20%",
+      end: "center 70%",
       scrub: 1,
       once: true,
     },
   });
+});
+
+//Skill Title Fade In
+gsap.to(".skills-title", {
+  opacity: 1,
+  y: 0,
+  duration: 0.25,
+  delay: 0.1,
+  stagger: 0.5,
+  scrollTrigger: {
+    trigger: "#skills",
+    start: "center bottom",
+  },
 });
 
 //Project Title Fade Animation

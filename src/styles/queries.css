@@ -84,3 +84,11 @@
     text-align: center;
   }
 }
+
+@media (width < 675px) {
+  .name-input,
+  .message-input,
+  .email-input {
+    grid-column: 1 / end;
+  }
+}
