@@ -399,6 +399,9 @@ main {
 }
 
 .contact-form {
+}
+
+.form-content {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
   gap: 2rem;
@@ -419,12 +422,12 @@ main {
 .contact-input {
   font-family: "Excon Regular";
   font-size: 1.25rem;
-  outline: none;
-  border: 1px solid var(--clr-gray);
   padding: 1rem;
   background: var(--bg-dark);
   color: var(--bg-light);
   border-radius: 0.5rem;
+  outline: none;
+  border: 1px solid var(--clr-gray);
   box-shadow:
   /* offset-x | offset-y | blur-radius | spread-radius | color */ 0px
       4px 5px 0px hsla(0, 0%, 0%, 0.14),
@@ -452,6 +455,9 @@ main {
   background: var(--bg-dark);
   border-left: 1px solid var(--clr-gray);
   border-right: 1px solid var(--clr-gray);
+}
+
+.form-submit {
 }
 
 /* Dark Mode Toggle */
