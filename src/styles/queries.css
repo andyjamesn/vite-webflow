@@ -33,9 +33,15 @@
     flex-direction: column;
   }
 
-  .shape-bg {
-    /* right: -75%; */
+  .shape-bg,
+  .shape-bg2 {
+    right: -75%;
     /* display: none; */
+  }
+
+  .shape-bg3 {
+    left: -50%;
+    bottom: 0;
   }
 
   .project-card {
