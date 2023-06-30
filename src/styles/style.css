@@ -392,9 +392,6 @@ main {
   margin: 0 auto;
 }
 
-.contact-form {
-}
-
 .form-content {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -464,23 +461,28 @@ main {
   margin-top: 1rem;
   height: 3rem;
   width: 3rem;
-  padding: 0.5rem;
+  padding: 0.75rem;
   cursor: pointer;
-  color: var(--clr-blue);
+  color: var(--bg-light);
   position: relative;
   display: grid;
   place-items: center;
   border-radius: 50%;
+
+  grid-column: 2 / 3;
+  justify-self: end;
+
+  transition: all 400ms ease;
 }
 
 .form-submit:before {
   content: "";
   position: absolute;
-  top: 0;
+  top: 1%;
   left: -4%;
   height: 100%;
   width: 100%;
-  background: var(--clr-gray);
+  background: var(--bg-light);
   opacity: 0.1;
   border-radius: 50%;
   transition: opacity 500ms ease;
