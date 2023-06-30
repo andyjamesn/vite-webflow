@@ -710,7 +710,7 @@ body[data-nav="true"] > #nav-toggle > .close {
 /* QUERIES */
 
 /* Media Query for Nav Toggle */
-@media (width < 900px) {
+@media only screen and (max-width: 900px) {
   nav {
     transform: translateX(-100%);
     width: 100%;
@@ -739,7 +739,7 @@ body[data-nav="true"] > #nav-toggle > .close {
   }
 }
 
-@media (width < 800px) {
+@media only screen and (max-width: 800px) {
   .projects-container {
     flex-direction: column;
   }
@@ -782,7 +782,7 @@ body[data-nav="true"] > #nav-toggle > .close {
   }
 }
 
-@media (width < 900px) {
+@media only screen and (max-width: 900px) {
   .skills-info {
     display: none;
   }
@@ -796,7 +796,7 @@ body[data-nav="true"] > #nav-toggle > .close {
   }
 }
 
-@media (width < 675px) {
+@media only screen and (max-width: 675px) {
   .name-input,
   .message-input,
   .email-input {
