@@ -52,6 +52,10 @@ main {
   align-items: center; */
 }
 
+.page {
+  overflow-x: hidden;
+}
+
 /* Home */
 #home {
   height: 100vh;
@@ -382,6 +386,7 @@ main {
   position: relative;
   display: grid;
   place-items: center;
+  overflow-x: hidden;
 }
 
 .contact-wrapper {
@@ -496,7 +501,7 @@ main {
   transition: all 400ms ease;
 }
 
-.form-submit:before{
+.form-submit:before {
   content: "";
   position: absolute;
   top: 1%;
