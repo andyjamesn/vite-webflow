@@ -393,6 +393,25 @@ main {
   margin: 0 auto;
 }
 
+.contact-title {
+  max-width: 1000px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.svg-icon {
+  display: inline-block;
+  vertical-align: middle;
+  color: var(--bg-light);
+  cursor: pointer;
+}
+
 .form-content {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -476,7 +495,7 @@ main {
   transition: all 400ms ease;
 }
 
-.form-submit:before {
+.form-submit:before{
   content: "";
   position: absolute;
   top: 1%;
