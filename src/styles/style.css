@@ -1,6 +1,46 @@
-/* @import "./utils.css";
-@import "./keyframes.css";
-@import "./queries.css"; */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  user-select: none;
+}
+
+button {
+  display: inline-block;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+@font-face {
+  font-family: "Excon Regular";
+  font-weight: 400;
+  src: url("/Fonts/Excon-Regular.woff") format("woff"),
+    url("/Fonts/Excon-Regular.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Chillax Bold";
+  font-weight: 800;
+  src: url("/Fonts/Chillax-Bold.woff") format("woff"),
+    url("/Fonts/Chillax-Bold.woff2") format("woff2");
+  font-display: swap;
+}
 
 :root {
   --bg-dark: #252323;
@@ -665,4 +705,165 @@ body[data-nav="true"] > #nav-toggle > .close {
 
 .down {
   transform: rotate(180deg);
+}
+
+/* QUERIES */
+
+/* Media Query for Nav Toggle */
+@media (width < 900px) {
+  nav {
+    transform: translateX(-100%);
+    width: 100%;
+  }
+
+  body[data-nav="true"] > nav {
+    transform: translateX(0);
+  }
+
+  #nav-links {
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    transform: translateX(70%) scale(0.9);
+  }
+
+  .nav-link {
+    flex-grow: 0;
+  }
+
+  #nav-toggle {
+    width: 3rem;
+    top: 1rem;
+    left: 10%;
+  }
+}
+
+@media (width < 800px) {
+  .projects-container {
+    flex-direction: column;
+  }
+
+  .shape-bg,
+  .shape-bg2 {
+    right: -75%;
+    /* display: none; */
+  }
+
+  .shape-bg3 {
+    left: -50%;
+    bottom: 0;
+  }
+
+  .project-card {
+    flex: 1 1 25rem;
+    margin-top: 3rem;
+  }
+
+  .card-link {
+    height: 50%;
+  }
+
+  .fill .card-img-container {
+    height: auto;
+  }
+
+  .card-img-container img {
+    object-fit: cover;
+  }
+
+  .card-stack {
+    width: 100%;
+    flex-flow: row wrap;
+  }
+
+  .stack-item {
+    margin-top: 0.5rem;
+  }
+}
+
+@media (width < 900px) {
+  .skills-info {
+    display: none;
+  }
+
+  .skills {
+    justify-content: center;
+  }
+
+  .skills-title {
+    text-align: center;
+  }
+}
+
+@media (width < 675px) {
+  .name-input,
+  .message-input,
+  .email-input {
+    grid-column: 1 / end;
+  }
+
+  .page {
+    overflow-x: hidden;
+  }
+}
+
+/* KEYFRAMES */
+@keyframes wavy {
+  0%,
+  100% {
+    clip-path: polygon(
+      0% 45%,
+      16% 44%,
+      33% 50%,
+      54% 60%,
+      70% 61%,
+      84% 59%,
+      100% 52%,
+      100% 100%,
+      0% 100%
+    );
+  }
+
+  50% {
+    clip-path: polygon(
+      0% 60%,
+      15% 65%,
+      34% 66%,
+      51% 62%,
+      67% 50%,
+      84% 45%,
+      100% 46%,
+      100% 100%,
+      0% 100%
+    );
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fading {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes dotWave {
+  0%,
+  100% {
+    transform: translateY(-5px);
+  }
+  50% {
+    transform: translateY(0);
+  }
 }
