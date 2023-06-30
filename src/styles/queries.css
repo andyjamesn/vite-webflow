@@ -91,4 +91,8 @@
   .email-input {
     grid-column: 1 / end;
   }
+
+  .page {
+    overflow-x: hidden;
+  }
 }
