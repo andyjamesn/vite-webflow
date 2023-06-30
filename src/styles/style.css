@@ -192,7 +192,7 @@ main {
   width: 100%;
   display: flex;
   gap: 2rem;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .project-card {
