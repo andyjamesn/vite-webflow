@@ -167,6 +167,7 @@ main {
 #projects {
   margin-top: 5rem;
   position: relative;
+  overflow: hidden;
 }
 
 .projects-wrapper {
@@ -191,7 +192,7 @@ main {
   width: 100%;
   display: flex;
   gap: 2rem;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .project-card {
@@ -490,6 +491,10 @@ main {
 
 .form-submit:hover:before {
   opacity: 0.3;
+}
+
+.form-submit:hover {
+  color: var(--clr-blue);
 }
 
 /* Dark Mode Toggle */
