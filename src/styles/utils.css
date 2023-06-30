@@ -31,6 +31,7 @@ button {
   font-weight: 400;
   src: url("/Fonts/Excon-Regular.woff") format("woff"),
     url("/Fonts/Excon-Regular.woff2") format("woff2");
+  font-display: swap;
 }
 
 @font-face {
@@ -38,4 +39,6 @@ button {
   font-weight: 800;
   src: url("/Fonts/Chillax-Bold.woff") format("woff"),
     url("/Fonts/Chillax-Bold.woff2") format("woff2");
+  font-display: swap;
+
 }

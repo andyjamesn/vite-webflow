@@ -1,6 +1,6 @@
-@import "./utils.css";
+/* @import "./utils.css";
 @import "./keyframes.css";
-@import "./queries.css";
+@import "./queries.css"; */
 
 :root {
   --bg-dark: #252323;
@@ -651,6 +651,11 @@ body[data-nav="true"] > #nav-toggle > .close {
   transition: transform, opacity;
   transition-timing-function: ease;
   transition-duration: 400ms;
+}
+
+.nav-toggle-icon {
+  height: 35px;
+  width: 35px;
 }
 
 .down {
