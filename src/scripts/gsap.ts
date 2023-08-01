@@ -10,7 +10,7 @@ desktopAnimations.add("(min-width: 800px)", () => {
   //Project Card Horizontal Scroll
   gsap.to(projectCards, {
     xPercent: -100 * (projectCards.length - 1),
-    ease: "none",
+    ease: "power1",
     scrollTrigger: {
       trigger: ".projects-container",
       pin: ".projects-wrapper",
@@ -25,26 +25,28 @@ desktopAnimations.add("(min-width: 800px)", () => {
   //Skill Cards Fade In Animation
   skillTL.from(skillCards, {
     opacity: 0,
-    ease: "none",
-    stagger: 0.5,
+    // y: 100,
+    ease: "power1",
+    stagger: 0.25,
     duration: 3,
     scrollTrigger: {
       trigger: "#skills",
-      start: "top bottom",
-      end: "center 70%",
-      scrub: 1,
+      start: "top center",
+      end: "center 30%",
+      scrub: true,
       once: true,
     },
   });
 });
 
 //Skill Title Fade In
-gsap.to(".skills-title", {
+gsap.to(".fadein", {
   opacity: 1,
-  y: 0,
+  ease: "power1",
   duration: 0.25,
   delay: 0.1,
   stagger: 0.5,
+
   scrollTrigger: {
     trigger: "#skills",
     start: "center bottom",
@@ -54,6 +56,7 @@ gsap.to(".skills-title", {
 //Project Title Fade Animation
 gsap.from(".fadein", {
   opacity: 0,
+  ease: "power1",
   duration: 0.25,
   delay: 0.1,
   stagger: 0.5,
@@ -67,6 +70,7 @@ gsap.from(".fadein", {
 //@ts-ignore
 gsap.from(projectCards, {
   y: 130,
+  ease: "power1",
   opacity: 0,
   duration: 0.5,
   delay: 0.2,
