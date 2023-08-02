@@ -32,7 +32,7 @@ desktopAnimations.add("(min-width: 800px)", () => {
     scrollTrigger: {
       trigger: "#skills",
       start: "top center",
-      end: "center 30%",
+      end: "center 50%",
       scrub: true,
       once: true,
     },
