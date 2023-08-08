@@ -1,5 +1,6 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import SplitType from "split-type";
 gsap.registerPlugin(ScrollTrigger);
 
 const projectCards = gsap.utils.toArray(".project-card");
@@ -83,15 +84,14 @@ gsap.from(projectCards, {
 
 //Home Title Animation
 const homeTL = gsap.timeline();
-const home = document.getElementById("home");
-const homeBGS = home!.querySelectorAll(".bg");
+
+const homeTitle = new SplitType(".home-title");
 homeTL
-  .to(".home-title", {
+  .to(".char", {
     y: 0,
-    opacity: 1,
-    duration: 0.5,
-    delay: 0.1,
-    stagger: 0.1,
+    stagger: 0.05,
+    delay: 0.2,
+    duration: 0.1,
   })
   .to(".home-description", {
     y: 0,
@@ -102,6 +102,8 @@ homeTL
   });
 
 //Home BG Animation
+const home = document.getElementById("home");
+const homeBGS = home!.querySelectorAll(".bg");
 home!.addEventListener("mousemove", (e) => {
   const depth = 20;
   let dirChange = 1;
