@@ -85,7 +85,7 @@ gsap.from(projectCards, {
 //Home Title Animation
 const homeTL = gsap.timeline();
 
-const homeTitle = new SplitType(".home-title");
+new SplitType(".home-title");
 homeTL
   .to(".char", {
     y: 0,
