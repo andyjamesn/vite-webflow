@@ -74,8 +74,8 @@ gsap.from(projectCards, {
   ease: "power1",
   opacity: 0,
   duration: 0.5,
-  delay: 0.2,
-  stagger: 0.5,
+  delay: 0.05,
+  stagger: 0.25,
   scrollTrigger: {
     trigger: ".projects-wrapper",
     start: "top center",
