@@ -13,7 +13,6 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(root, "index.html"),
-        years: resolve(root, "years", "index.html"),
       },
     },
   },
