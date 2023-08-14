@@ -8,11 +8,13 @@ export default defineConfig({
   root,
   base: "/",
   build: {
+    formats: ['es'],
     outDir,
     emptyOutDir: true,
     rollupOptions: {
       input: {
         main: resolve(root, "index.html"),
+        svgseparators: resolve(root, "pages/svgseparators.html"),
       },
     },
   },
