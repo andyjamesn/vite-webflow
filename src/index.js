@@ -1,11 +1,11 @@
 import Lenis from "@studio-freight/lenis";
 import { gsap } from "gsap";
-import { preloader } from "./scripts/preloader";
+// import { preloader } from "./scripts/preloader";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 // preload the images
-preloader();
+// preloader();
 
 const paths = [...document.querySelectorAll("path.path-anim")];
 

@@ -14,7 +14,6 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(root, "index.html"),
-        svgseparators: resolve(root, "pages/svgseparators.html"),
       },
     },
   },
