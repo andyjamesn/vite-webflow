@@ -2,8 +2,8 @@
 export default {
   content: [
     "./index.html",
-    './src/course/constantpulse/index.html',
-    "./src/**/*.{js,ts,jsx,tsx}",
+    './src/**/*.{js,ts,jsx,tsx,html}',
+    './src/course/splittext/index.html',
   ],
   theme: {
     extend: {},
